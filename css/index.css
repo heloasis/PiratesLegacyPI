@@ -1,0 +1,73 @@
+
+@font-face {
+    font-family: komika;
+    src: url(../fontes/komika_axis/KOMIKAX_.ttf);
+}
+
+
+body{
+  margin: 0; /* Remove espaços em branco padrões do navegador */
+  padding: 0; /* Remove qualquer preenchimento padrão */
+  height: 100%; /* Garante que ocupem 100% da altura da tela */
+  overflow: hidden;/*Impede rolagem caso não queira barra de rolagem */
+}
+
+
+.cenario {
+  position: relative; /* necessário para o título ficar por cima */
+  width: 100vw; /* Largura igual a 100% da largura da tela */
+  height: 100vh; /* Altura igual a 100% da altura da tela */
+  background-image: url('../imagens/cenario.png'); /* Define a imagem de fundo do elemento */
+  background-size: cover; /* Faz a imagem cobrir todo o elemento, mesmo que parte dela seja cortada */
+  background-repeat: no-repeat; /* Impede que a imagem se repita caso seja menor que o fundo */
+  background-position: center; /* Centraliza a imagem no elemento (horizontal e verticalmente) */
+}
+
+
+.titulo {
+  position: absolute;
+  top: 80px; /* distância do topo */
+  left: 50%; /* posicionamento horizontal */
+  transform: translateX(-50%); /* centraliza exatamente */
+  color:#f0d18d; /* cor do texto */
+  font-size: 80px; /* tamanho do texto */
+  font-family: komika;
+  font-weight: 200; /* Usado para afinar o texto */
+  text-shadow: 3px 3px black; /* sombra pra destacar */
+}
+
+
+.titulo2 {
+  position: absolute;
+  top: 155px; /* distância do topo */
+  left: 50%; /* posicionamento horizontal */
+  transform: translateX(-50%); /* centraliza exatamente */
+  color:#f0d18d; /* cor do texto */
+  font-size: 80px; /* tamanho do texto */
+  font-family: komika;
+  font-weight: 200; /* Usado para afinar o texto */
+  text-shadow: 3px 3px black; /* sombra pra destacar */
+}
+
+
+.botao {
+  position: absolute;
+  bottom: 225px;
+  right: 650px;
+  background-color: #fcecc0;
+  color: #3a230e;  
+  font-size: 35px;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: none;
+  text-decoration: none; /* tira a linha que sublinha */
+  border-radius: 30px; /* deixa o botão oval */
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.3); /* sombra leve */
+  cursor: pointer; /* Altera o cursor do mouse, indicando que é clicável */
+  font-family: komika;
+  transition: transform 0.2s ease; /* Cria uma animação suave quando o botão sofre uma transformação */
+}
+
+.botao:hover {
+  transform: scale(1.05); /* efeito de "crescer" ao passar o mouse */
+}
