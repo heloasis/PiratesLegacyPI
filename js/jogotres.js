@@ -1,32 +1,32 @@
 const personagem = document.getElementById('personagem');
 const nomePersonagem = localStorage.getItem('personagemEscolhido') || 'nicolly'; 
-const barril = document.querySelector('.barril');
+const pedra = document.querySelector('.pedra');
 const mensagem = document.querySelector('.mensagem');
 const contador = document.getElementById('contador');
 
 
 let pontuacao = 0;
 let gameOver = false;
-let barrilJaContado = false;
+let pedraJaContado = false;
 
 // pulo
 const jump = () => {
   personagem.classList.add('pulo');
   setTimeout(() => {
     personagem.classList.remove('pulo');
-  }, 900);
+  }, 600);
 };
 
 const loop = setInterval(() => {
   if (gameOver) return;
 
   const personagemPosition = parseFloat(window.getComputedStyle(personagem).bottom.replace('px', ''));
-  const barrilposition = barril.offsetLeft;
+  const pedraposition = pedra.offsetLeft;
 
   // colisão
-  if (barrilposition <= 120 && barrilposition > 0 && personagemPosition < 12) {
-    barril.style.animation = 'none';
-    barril.style.left = `${barrilposition}px`;
+  if (pedraposition <= 120 && pedraposition > 0 && personagemPosition < 12) {
+   pedra.style.animation = 'none';
+   pedra.style.left = `${pedraposition}px`;
 
     personagem.style.animation = 'none';
     personagem.style.bottom = `${personagemPosition}px`;
@@ -36,25 +36,25 @@ const loop = setInterval(() => {
     gameOver = true;
   }
 
-  // Contar ponto quando o barril passa
-  if (barrilposition < 0 && !barrilJaContado && !gameOver) {
+  // Contar ponto quando a pedra passa
+  if (pedraposition < 0 && !pedraJaContado && !gameOver) {
     pontuacao++;
     contador.innerText = pontuacao;
-    barrilJaContado = true;
+    pedraJaContado = true;
 
-  if (pontuacao >= 15) {
+  if (pontuacao >= 30) {
   clearInterval(loop);
 
   // Mostra a mensagem final
   document.querySelector('.final').style.display = 'flex';
   // PARAR BARRIL
-  barril.style.animation = 'none';
-  barril.style.left = `${barrilposition}px`;
+pedra.style.animation = 'none';
+pedra.style.left = `${espinhosposition}px`;
 }
   }
-  // Quando barril voltar para direita, pode contar de novo
-  if (barrilposition > 200) {
-    barrilJaContado = false;
+  // Quando pedra voltar para direita, pode contar de novo
+  if (pedraposition > 200) {
+   pedraJaContado = false;
   }
 
 }, 10);

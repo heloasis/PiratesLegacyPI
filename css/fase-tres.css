@@ -1,0 +1,112 @@
+html, body {
+  height: 100%;
+}
+
+*{
+margin: 0; padding: 0; box-sizing: border-box;
+}
+
+
+.jogo {
+ width: 100%;
+ height: 100%;
+ position: relative;
+ border-bottom: 15px solid rgb(35, 160, 35);
+ background: linear-gradient(#87ceeb, #e0f6ff);
+ overflow: hidden;
+}
+
+
+.personagem {
+  position: absolute;
+ bottom: 0%;
+  width: 12vw;  
+}
+
+
+
+.amanda {
+  width: 9vw;
+  bottom: 0%;
+}
+
+.maria {
+  width: 9vw;
+  bottom: 0%;
+}
+
+.gustavo {
+  width: 9vw;
+ bottom: 0%;  
+}
+
+.heloisa {
+  width: 9vw;
+  bottom: 0%;
+}
+
+.nicolly {
+  width: 9vw;
+  bottom: 0%;
+}
+
+.pirata {
+  position: absolute;
+  width: 20vw;   
+  bottom: 0%;
+  left: 65vw;  
+}
+ 
+
+#mensagempirata {
+  position: absolute;
+ top: 8vh;
+ left: 50%;
+ display: none;
+ font-family: komika, sans-serif;
+  text-align: center;
+  white-space: pre-wrap;
+  background-color: #fcecc0;
+  color: #3a230e;
+  font-size: 1.2vw;        
+  font-weight: bold;
+  padding: 0.5em 1em;    
+  border: none;
+  text-decoration: none;
+  border-radius: 1.5em;
+  z-index: 9999;
+  max-width: 450px;
+  color: #3e2f1c; 
+  border: 3px solid #8b5e3c; 
+  box-shadow: 0.3em 0.3em 0.8em rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+ max-width: 30vw;        
+  z-index: 9999;
+}
+
+#botaoContinuar {
+  position: absolute;          
+  bottom: 38vh; 
+  right: 28vw;  
+  background-color: #fcecc0;
+  color: #3a230e; 
+  font-family: komika;
+  font-size: 1.8vw;      
+  font-weight: bold;
+  padding: 0.8em 1.5em;
+  border: 2px solid #8b5e3c; 
+  border-radius: 2em; 
+  box-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.3); 
+  z-index: 9999;
+  cursor: pointer;
+}
+
+
+
+.nuvem {
+  position: absolute;
+  top: 10vh;  
+  right: 20vw;  
+  width: 25vw;    
+  height: auto;
+}

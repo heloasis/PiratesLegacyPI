@@ -1,73 +1,76 @@
-
 @font-face {
-    font-family: komika;
-    src: url(../fontes/komika_axis/KOMIKAX_.ttf);
+  font-family: komika;
+  src: url(../fontes/komika_axis/KOMIKAX_.ttf);
 }
 
-
-body{
-  margin: 0; /* Remove espaços em branco padrões do navegador */
-  padding: 0; /* Remove qualquer preenchimento padrão */
-  height: 100%; /* Garante que ocupem 100% da altura da tela */
-  overflow: hidden;/*Impede rolagem caso não queira barra de rolagem */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
-
 
 .cenario {
-  position: relative; /* necessário para o título ficar por cima */
-  width: 100vw; /* Largura igual a 100% da largura da tela */
-  height: 100vh; /* Altura igual a 100% da altura da tela */
-  background-image: url('../imagens/cenario.png'); /* Define a imagem de fundo do elemento */
-  background-size: cover; /* Faz a imagem cobrir todo o elemento, mesmo que parte dela seja cortada */
-  background-repeat: no-repeat; /* Impede que a imagem se repita caso seja menor que o fundo */
-  background-position: center; /* Centraliza a imagem no elemento (horizontal e verticalmente) */
+  position: relative; 
+  width: 100vw; 
+  height: 100vh;
+  background-image: url('../imagens/cenario.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
 }
 
 
 .titulo {
   position: absolute;
-  top: 80px; /* distância do topo */
-  left: 50%; /* posicionamento horizontal */
-  transform: translateX(-50%); /* centraliza exatamente */
-  color:#f0d18d; /* cor do texto */
-  font-size: 80px; /* tamanho do texto */
+  top: 8vh; 
+  left: 50%; 
+  transform: translateX(-50%);
+  color: #f0d18d; 
+  font-size: 6vw;
   font-family: komika;
-  font-weight: 200; /* Usado para afinar o texto */
-  text-shadow: 3px 3px black; /* sombra pra destacar */
+  font-weight: 200; 
+  text-shadow: 0.3vw 0.3vw black;
 }
 
 
 .titulo2 {
   position: absolute;
-  top: 155px; /* distância do topo */
-  left: 50%; /* posicionamento horizontal */
-  transform: translateX(-50%); /* centraliza exatamente */
-  color:#f0d18d; /* cor do texto */
-  font-size: 80px; /* tamanho do texto */
+  top: 22vh; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  color: #f0d18d; 
+  font-size: 6vw; 
   font-family: komika;
-  font-weight: 200; /* Usado para afinar o texto */
-  text-shadow: 3px 3px black; /* sombra pra destacar */
+  font-weight: 200; 
+  text-shadow: 0.3vw 0.3vw black; 
 }
 
 
 .botao {
   position: absolute;
-  bottom: 225px;
-  right: 650px;
+  bottom: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #fcecc0;
   color: #3a230e;  
-  font-size: 35px;
+  font-size: 2vw; 
   font-weight: bold;
-  padding: 10px 25px;
+  padding: 1vh 2vw;
   border: none;
-  text-decoration: none; /* tira a linha que sublinha */
-  border-radius: 30px; /* deixa o botão oval */
-  box-shadow: 4px 4px rgba(0, 0, 0, 0.3); /* sombra leve */
-  cursor: pointer; /* Altera o cursor do mouse, indicando que é clicável */
+  text-decoration: none; 
+  border-radius: 30px; 
+  box-shadow: 0.5vw 0.5vw rgba(0, 0, 0, 0.3); 
+  cursor: pointer; 
   font-family: komika;
-  transition: transform 0.2s ease; /* Cria uma animação suave quando o botão sofre uma transformação */
+  transition: transform 0.2s ease; 
 }
 
 .botao:hover {
-  transform: scale(1.05); /* efeito de "crescer" ao passar o mouse */
+  transform: translateX(-50%) scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  /*faz ser responsivo pra celular  */
 }

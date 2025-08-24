@@ -1,60 +1,61 @@
 const personagem = document.getElementById('personagem');
 const nomePersonagem = localStorage.getItem('personagemEscolhido') || 'nicolly'; 
-const barril = document.querySelector('.barril');
+const bandeira = document.querySelector('.bandeira');
 const mensagem = document.querySelector('.mensagem');
 const contador = document.getElementById('contador');
 
-
 let pontuacao = 0;
 let gameOver = false;
-let barrilJaContado = false;
+let bandeiraJaContado = false;
 
 // pulo
 const jump = () => {
   personagem.classList.add('pulo');
   setTimeout(() => {
     personagem.classList.remove('pulo');
-  }, 900);
+  }, 600);
 };
 
 const loop = setInterval(() => {
   if (gameOver) return;
 
   const personagemPosition = parseFloat(window.getComputedStyle(personagem).bottom.replace('px', ''));
-  const barrilposition = barril.offsetLeft;
+  const bandeiraposition = bandeira.offsetLeft;
 
   // colisão
-  if (barrilposition <= 120 && barrilposition > 0 && personagemPosition < 12) {
-    barril.style.animation = 'none';
-    barril.style.left = `${barrilposition}px`;
+  if (bandeiraposition <= 120 && bandeiraposition > 0 && personagemPosition < 12) {
+    bandeira.style.animation = 'none';
+    bandeira.style.left = `${bandeiraposition}px`;
 
     personagem.style.animation = 'none';
     personagem.style.bottom = `${personagemPosition}px`;
-  
    personagem.src = `imagens/${nomePersonagem}.png`;
+
     mensagem.style.display = 'flex';
     gameOver = true;
   }
 
   // Contar ponto quando o barril passa
-  if (barrilposition < 0 && !barrilJaContado && !gameOver) {
+  if (bandeiraposition < 0 && !bandeiraJaContado && !gameOver) {
     pontuacao++;
     contador.innerText = pontuacao;
-    barrilJaContado = true;
+    bandeiraJaContado = true;
 
-  if (pontuacao >= 15) {
+  if (pontuacao >= 20) {
   clearInterval(loop);
 
   // Mostra a mensagem final
   document.querySelector('.final').style.display = 'flex';
+
   // PARAR BARRIL
-  barril.style.animation = 'none';
-  barril.style.left = `${barrilposition}px`;
+  bandeira.style.animation = 'none';
+  bandeira.style.left = `${barrilposition}px`;
 }
   }
+
   // Quando barril voltar para direita, pode contar de novo
-  if (barrilposition > 200) {
-    barrilJaContado = false;
+  if (bandeiraposition > 200) {
+    bandeiraJaContado = false;
   }
 
 }, 10);
@@ -66,8 +67,7 @@ document.addEventListener('keydown', (e) => {
   } else if (e.key === " ") {
     jump();
   }
-})
+});
 
 personagem.src = `imagens/${nomePersonagem}.gif`; 
 personagem.classList.add(nomePersonagem);
-  

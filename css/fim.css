@@ -1,0 +1,63 @@
+html, body {
+  height: 100%;
+  
+}
+
+*{
+margin: 0; padding: 0; box-sizing: border-box;
+}
+
+
+.fim {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: black;
+  overflow: hidden  ;
+}
+
+
+.heloisa {
+    position: absolute;
+    top: 35%;
+    left: 17%;
+    width: 10%;
+}
+
+.gustavo {
+    position: absolute;
+   top: 35%;
+    left: 45%;
+    width: 9%;
+}
+
+.maria {
+    position: absolute;
+  top: 35%;
+    left: 73%;
+    width: 10%;
+}
+
+.amanda {
+    position: absolute;
+   top: 35%;
+    left: 59%;
+    width: 9%;
+}
+
+.nicolly {
+    position: absolute;
+   top: 35%;
+    left: 31%;
+    width: 9%;
+}
+
+#botaoContinuar {
+  position: absolute;          
+  bottom: 38vh; 
+  right: 50%;  
+  color: #ffffff; 
+  font-family: komika;
+  font-size: 1.8vw;      
+  cursor: pointer;
+}

@@ -7,6 +7,27 @@
     <link rel="stylesheet" href="css/personagens.css">
 </head>
 <body>
-    
+
+<div class="cenario">
+    <div class="bloco"><h1>Escolha seu personagem</h1></div> 
+</div>
+
+<div>
+<img class="personagem heloisa" src="imagens/heloisa.png" alt="heloisa" onclick="escolherPersonagem('heloisa')">
+<img class="personagem nicolly" src="imagens/nicolly.png" alt="nicolly" onclick="escolherPersonagem('nicolly')">
+<img class="personagem maria" src="imagens/maria.png" alt="maria" onclick="escolherPersonagem('maria')">
+<img class="personagem gustavo" src="imagens/gustavo.png" alt="gustavo" onclick="escolherPersonagem('gustavo')">
+<img class="personagem amanda" src="imagens/amanda.png" alt="amanda" onclick="escolherPersonagem('amanda')">
+
+</div>
+
 </body>
+
+<script>
+  function escolherPersonagem(nome) {
+    localStorage.setItem('personagemEscolhido', nome);
+    window.location.href = 'fase-um.html';
+  }
+</script>
+
 </html>
