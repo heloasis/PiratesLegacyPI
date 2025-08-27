@@ -72,5 +72,25 @@ body {
 
 
 @media (max-width: 768px) {
-  /*faz ser responsivo pra celular  */
+  .titulo {
+  top: 6vh; 
+  font-size: 12vw; 
+  text-shadow: 0.6vw 0.6vw black;
+  text-align: center;
+  }
+    .titulo2 {
+  top: 24vh; 
+  font-size: 12vw;
+  text-shadow: 0.6vw 0.6vw black;
+  }
+
+  .botao {
+  bottom: 35vh;
+  font-size: 5vw;  
+  padding: 2vh 8vw; 
+  border-radius: 20px;
+  box-shadow: 1vw 1vw rgba(0,0,0,0.3);
+  }
 }
+
+
