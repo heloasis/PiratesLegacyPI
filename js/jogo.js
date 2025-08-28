@@ -47,6 +47,7 @@ const loop = setInterval(() => {
 
   // Mostra a mensagem final
   document.querySelector('.final').style.display = 'flex';
+
   // PARAR BARRIL
   barril.style.animation = 'none';
   barril.style.left = `${barrilposition}px`;
@@ -70,4 +71,29 @@ document.addEventListener('keydown', (e) => {
 
 personagem.src = `imagens/${nomePersonagem}.gif`; 
 personagem.classList.add(nomePersonagem);
+
+//contador antes de comecar
+window.addEventListener("load", () => {
+ const jogo = document.querySelector(".jogo")
+ const overlay = document.getElementById("overlay")
+const contadorinicial = document.getElementById("contadorinicial")
+const barril = document.querySelector(".barril")
+let t = 3
+const cron = setInterval(() => {
+t--
+if (t>0){
+  contadorinicial.textContent = t;
+}
+else {clearInterval(cron)
+overlay.style.display = "none"
+barril.classList.add("animar")
+ 
+iniciarJogo()
+}
+}, 1000)
+})
+
+function iniciarJogo() {
+  console.log("Jogo Iniciado");
+}
   
