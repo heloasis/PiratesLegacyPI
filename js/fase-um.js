@@ -42,6 +42,8 @@ function verificarColisao() {
   );
 
 // Configurações específicas de cada personagem
+
+/* essa parte que eu tava falando que ta complicado :( */
 const configPersonagens = {
   amanda:  { width: "210px" },
   nicolly: { width: "210px" },
@@ -49,6 +51,9 @@ const configPersonagens = {
   maria:   { width: "255px" },
   gustavo: { width: "215px" }
 };
+
+
+
 
 // Quando encostar no pescador
 if (colidiu && !mensagemMostrada) {

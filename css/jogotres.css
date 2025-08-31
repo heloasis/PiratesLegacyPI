@@ -47,9 +47,13 @@ margin: 0; padding: 0; box-sizing: border-box;
 .pedra {
   position: absolute;
   bottom: 0;
-  width: 11vw; 
-  animation: pedra 0.9s infinite linear;                                                                                                                                                                                                                               s infinite linear;
+  width: 11vw;                                                                                                                                                                                                                        s infinite linear;
 }
+
+.pedra.animar{
+  animation: pedra 1.1s infinite linear;                                                                                                                                                                           
+}
+
 
 
 .pulo {
@@ -153,4 +157,24 @@ to {
   top: 16vh; 
   right: 12vw;    
   position: absolute;
+}
+
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; 
+}
+
+#contadorinicial {
+  font-size: 6vw;
+  color: white;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }

@@ -9,9 +9,33 @@
 <body>
 
 <div class="cenario">
-    <div class="bloco"><h1>Escolha seu personagem</h1></div> 
+    <div class="bloco"></div> 
 </div>
 
+<div>
+  <h1 class="texto1">Escolha seu personagem</h1>
+</div>
+
+<style>
+  h1.texto1 {
+    font-size: 3vw;
+    color: #756136;
+    text-align: auto;
+  }
+
+  @media (max-width: 400px) {
+    h1.texto1 {
+      font-size: 7vw; 
+      
+      /* aumenta só em celular */
+    }
+  }
+  
+  
+</style>
+<body>
+  
+</body class=>
 <div>
 <img class="personagem heloisa" src="imagens/heloisa.png" alt="heloisa" onclick="escolherPersonagem('heloisa')">
 <img class="personagem nicolly" src="imagens/nicolly.png" alt="nicolly" onclick="escolherPersonagem('nicolly')">
@@ -19,8 +43,61 @@
 <img class="personagem gustavo" src="imagens/gustavo.png" alt="gustavo" onclick="escolherPersonagem('gustavo')">
 <img class="personagem amanda" src="imagens/amanda.png" alt="amanda" onclick="escolherPersonagem('amanda')">
 
+
+
 </div>
 
+
+
+<style>
+
+/* tamanho dospersonagens tela pc*/
+     img.heloisa {
+      width: 16vw;  /* aumenta o tamanho dos personagens */
+    }
+
+
+   
+  
+     img.nicolly {
+      width: 16vw;  /* aumenta o tamanho dos personagens */
+    }
+
+ img.maria {
+      width: 16vw;  /* aumenta o tamanho dos personagens */
+    }
+
+     img.gustavo {
+      width: 16vw;  /* aumenta o tamanho dos personagens */
+    }
+
+     img.amanda {
+      width: 16vw;  /* aumenta o tamanho dos personagens */
+    }
+/* tamanho dos personagens tela celular*/
+
+ @media (max-width: 400px) {
+    img.heloisa {
+        width: 23vw;
+        
+    }
+    img.nicolly {
+        width: 23vw;
+    }
+    img.maria {
+        width: 23vw;
+    }
+    img.gustavo {
+        width: 23vw;
+        top: 150px;
+    }
+    img.amanda {
+        width: 23vw;
+    }
+}
+
+</style>
+</body>
 </body>
 
 <script>

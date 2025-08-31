@@ -71,3 +71,28 @@ document.addEventListener('keydown', (e) => {
 personagem.src = `imagens/${nomePersonagem}.gif`; 
 personagem.classList.add(nomePersonagem);
   
+//contador antes de comecar
+window.addEventListener("load", () => {
+ const jogo = document.querySelector(".jogo")
+ const overlay = document.getElementById("overlay")
+const contadorinicial = document.getElementById("contadorinicial")
+const pedra = document.querySelector(".pedra")
+let t = 3
+const cron = setInterval(() => {
+t--
+if (t>0){
+  contadorinicial.textContent = t;
+}
+else {clearInterval(cron)
+overlay.style.display = "none"
+pedra.classList.add("animar")
+ 
+iniciarJogo()
+}
+}, 1000)
+})
+
+function iniciarJogo() {
+  console.log("Jogo Iniciado");
+}
+  
