@@ -105,3 +105,24 @@ function iniciarJogo() {
   console.log("Jogo Iniciado");
 }
   
+//movimento com TOUCH
+let pulando = false
+
+function pular() {
+if (pulando) return 
+  pulando = true
+  personagem.classList.add('pulo')
+  setTimeout(() => {
+    personagem.classList.remove('pulo')
+    pulando = false
+  }, 600)
+}
+document.addEventListener("touchstart", pular)
+
+document.addEventListener('touchstart', (e) => {
+  if (gameOver) {
+    location.reload(); // Reinicia o jogo
+  } else if (e.key === " ") {
+    jump();
+  }
+})

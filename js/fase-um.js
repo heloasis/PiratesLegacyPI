@@ -93,29 +93,20 @@ botaoContinuar.addEventListener('click', () => {
 });
 
 
-// ===== MOVIMENTO PARA CELULAR (TOQUE) =====
-let andando = false;
+//movimento com TOUCH
+let andando = false
 
 function andar() {
-  if (andando && podeMover) {
-    posicaoX += velocidade; 
-    personagem.style.left = posicaoX + "px";
+if (andando && podeMover) {
+ posicaoX += velocidade
+ personagem.style.left = posicaoX + "px";
+  verificarColisao(); 
+  requestAnimationFrame(andar)}}
 
-    verificarColisao(); // também checa colisão no touch
-
-    requestAnimationFrame(andar);
-  }
-}
-
-// Quando tocar na tela começa andar
 document.addEventListener("touchstart", () => {
   if (!andando) {
-    andando = true;
-    andar();
-  }
-});
+    andando = true
+    andar()}})
 
-// Quando tirar o dedo para andar
 document.addEventListener("touchend", () => {
-  andando = false;
-});
+  andando = false})
