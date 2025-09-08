@@ -11,11 +11,26 @@ margin: 0; padding: 0; box-sizing: border-box;
   width: 100%;
   height: 100%;
   position: relative;
-  border-bottom: 15px solid rgb(35, 160, 35);
+  border-bottom: 30px solid rgb(35, 160, 35);
   background: linear-gradient(#87ceeb, #e0f6ff);
   overflow: hidden;
  
 }
+
+@media (max-width: 480px) {
+
+
+  .jogo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-bottom: 45px solid rgb(35, 160, 35);
+  background: linear-gradient(#87ceeb, #e0f6ff);
+  overflow: hidden;
+ 
+}
+}
+
 
 
 .personagem {
@@ -26,20 +41,56 @@ margin: 0; padding: 0; box-sizing: border-box;
 }
 
 
+@media (max-width: 480px) {
+  .personagem {
+   position: absolute;
+  width: 24vw;  
+  bottom: 0;
+  left: 10vw;  
+
+}
+}
+
 .amanda {
   width: 8vw;
+}
+
+@media (max-width: 480px) {
+  .amanda {
+  width: 16vw;
+}
 }
 
 .maria {
   width: 7.5vw;
 }
 
+@media (max-width: 480px) {
+  .maria {
+  width: 15vw;
+}
+}
+
+
 .gustavo {
   width: 8vw;
 }
 
+@media (max-width: 480px) {
+  .gustavo {
+  width: 16vw;
+}
+}
+
+
 .heloisa {
   width: 7.8vw;
+}
+
+@media (max-width: 480px) {
+  .heloisa {
+  width: 16vw;
+}
 }
 
 
@@ -50,6 +101,16 @@ margin: 0; padding: 0; box-sizing: border-box;
   width: 8vw;                                                                                                                                                                                                                             s infinite linear;
 }
 
+@media (max-width: 480px) {
+.bandeira {
+  position: absolute;
+  bottom: 0;
+  width: 18vw;                                                                                                                                                                                                                             s infinite linear;
+}
+}
+
+
+
 .bandeira.animar{
   animation: bandeira 1.1s infinite linear;                                                                                                                                                                           
 }
@@ -57,7 +118,7 @@ margin: 0; padding: 0; box-sizing: border-box;
 
 
 .pulo {
-   animation: pulo 700ms ease-out;
+   animation: pulo 810ms ease-out;
 }
 
 @keyframes bandeira {
@@ -133,6 +194,27 @@ to {
   z-index: 9999;
 }
 
+@media (max-width: 480px) {
+.pontuacao {
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 248, 220, 0.95);
+  color: #3e2f1c; 
+  font-size: 28px;
+  font-weight: bold;
+  padding: 12px 30px;
+  border: 3px solid #8b5e3c; 
+  border-radius: 20px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  width: 75% ;
+}
+}
+
+
 
 .final {
   position: absolute;
@@ -152,6 +234,30 @@ to {
   z-index: 9999;
 }
 
+@media (max-width: 480px) {
+
+.final {
+  position: absolute;
+  bottom: 46vh; 
+    left: 50%;               
+  transform: translateX(-50%);
+  background-color: #fcecc0;
+  color: #3a230e; 
+  font-family: komika; 
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 25px; 
+  border: none;
+  text-decoration: none; 
+  border-radius: 30px; 
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.3); 
+  z-index: 9999;
+}
+
+
+}
+
+
 .nuvem {     
   width: 26vw;
   top: 16vh; 
@@ -159,6 +265,15 @@ to {
   position: absolute;
 }
 
+@media (max-width: 480px) {
+  .nuvem {     
+  width: 46vw;
+  top: 28vh; 
+  right: 12vw;    
+  position: absolute;
+}
+
+}
 
 #overlay {
   position: fixed;

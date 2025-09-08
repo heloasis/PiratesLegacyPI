@@ -24,12 +24,37 @@ margin: 0; padding: 0; box-sizing: border-box;
     width: 10%;
 }
 
+@media (max-width: 480px) {
+  .heloisa{
+
+  top:22%;
+    left: 10%;
+    width: 25%;
+}
+
+
+  }
+  
+
+
+
 .gustavo {
     position: absolute;
    top: 35%;
     left: 45%;
     width: 9%;
 }
+@media (max-width: 480px) {
+  .gustavo{
+
+   top: 21%;
+    left: 38%;
+    width: 24%;
+}
+
+}
+  
+  
 
 .maria {
     position: absolute;
@@ -38,11 +63,37 @@ margin: 0; padding: 0; box-sizing: border-box;
     width: 10%;
 }
 
+@media (max-width: 480px) {
+  .maria{
+
+    position: absolute;
+  top: 21%;
+    left: 67%;
+    width: 26%;
+}
+
+
+  }
+
+
 .amanda {
     position: absolute;
    top: 35%;
     left: 59%;
-    width: 9%;
+    width: 09%;
+}
+
+@media (max-width: 480px) {
+  .amanda{
+
+
+ position: absolute;
+   top: 36%;
+    left: 55%;
+    width: 24%;
+
+  }
+  
 }
 
 .nicolly {
@@ -52,12 +103,40 @@ margin: 0; padding: 0; box-sizing: border-box;
     width: 9%;
 }
 
+@media (max-width: 480px) {
+  .nicolly{
+
+  position: absolute;
+   top: 35%;
+    left: 21%;
+    width: 25%;
+
+
+  }
+  
+}
+
+
 #botaoContinuar {
   position: absolute;          
   bottom: 38vh; 
-  right: 50%;  
+  right: 45%;  
   color: #ffffff; 
   font-family: komika;
   font-size: 1.8vw;      
   cursor: pointer;
 }
+
+@media (max-width: 480px) {
+  #botaoContinuar{
+
+  position: absolute;          
+  bottom: 38vh; 
+  right: 22%;  
+  color: #ffffff; 
+  font-family: komika;
+  font-size: 8vw;      
+  cursor: pointer;
+}
+  }
+  

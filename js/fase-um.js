@@ -14,7 +14,7 @@ let podeMover = true;
 personagem.src = `imagens/${nomePersonagem}.gif`;
 personagem.classList.add(nomePersonagem);
 
-// Movimento do personagem
+// Movimento com TECLADO
 document.addEventListener('keydown', (evento) => {
   if (!podeMover) return; // se não puder mover, ignora teclas
 
@@ -24,6 +24,7 @@ document.addEventListener('keydown', (evento) => {
     posicaoX -= velocidade;
   }
 
+  // limita dentro da tela
   posicaoX = Math.max(0, Math.min(window.innerWidth - 50, posicaoX));
   personagem.style.left = posicaoX + 'px';
 
@@ -41,40 +42,36 @@ function verificarColisao() {
     rectPersonagem.top > rectPescador.bottom
   );
 
-// Configurações específicas de cada personagem
+  // Configurações específicas de cada personagem
+  const configPersonagens = {
+    amanda:  { width: "210px" },
+    nicolly: { width: "210px" },
+    heloisa: { width: "230px" },
+    maria:   { width: "255px" },
+    gustavo: { width: "215px" }
+  };
 
-/* essa parte que eu tava falando que ta complicado :( */
-const configPersonagens = {
-  amanda:  { width: "210px" },
-  nicolly: { width: "210px" },
-  heloisa: { width: "230px" },
-  maria:   { width: "255px" },
-  gustavo: { width: "215px" }
-};
+  // Quando encostar no pescador
+  if (colidiu && !mensagemMostrada) {
+    mensagemMostrada = true;
+    podeMover = false;
+    personagem.src = `imagens/${nomePersonagem}.png`;
 
+    // Aplica tamanho e posição personalizados
+    if (configPersonagens[nomePersonagem]) {
+      personagem.style.width = configPersonagens[nomePersonagem].width;
+      if (configPersonagens[nomePersonagem].top) {
+        personagem.style.top = configPersonagens[nomePersonagem].top;
+      }
+    }
 
-
-
-// Quando encostar no pescador
-if (colidiu && !mensagemMostrada) {
-  mensagemMostrada = true;
-  podeMover = false;
-  personagem.src = `imagens/${nomePersonagem}.png`;
-
-  // Aplica tamanho e posição personalizados
-  if (configPersonagens[nomePersonagem]) {
-    personagem.style.width = configPersonagens[nomePersonagem].width;
-    personagem.style.top = configPersonagens[nomePersonagem].top;
+    mostrarMensagemDigitando(textoOriginal.innerText);
   }
-
-  mostrarMensagemDigitando(textoOriginal.innerText);
-}
-
 }
 
 function mostrarMensagemDigitando(texto) {
-  const textoCompleto = texto; // pega o texto atual do HTML
-  textoOriginal.innerText = ''; // limpa antes de digitar
+  const textoCompleto = texto; 
+  textoOriginal.innerText = ''; 
   mensagempescador.style.display = 'block';
   botaoContinuar.style.display = 'none';
 
@@ -95,3 +92,30 @@ botaoContinuar.addEventListener('click', () => {
   botaoContinuar.style.display = 'none';
 });
 
+
+// ===== MOVIMENTO PARA CELULAR (TOQUE) =====
+let andando = false;
+
+function andar() {
+  if (andando && podeMover) {
+    posicaoX += velocidade; 
+    personagem.style.left = posicaoX + "px";
+
+    verificarColisao(); // também checa colisão no touch
+
+    requestAnimationFrame(andar);
+  }
+}
+
+// Quando tocar na tela começa andar
+document.addEventListener("touchstart", () => {
+  if (!andando) {
+    andando = true;
+    andar();
+  }
+});
+
+// Quando tirar o dedo para andar
+document.addEventListener("touchend", () => {
+  andando = false;
+});

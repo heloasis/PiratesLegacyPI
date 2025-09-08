@@ -20,44 +20,52 @@ const jump = () => {
 const loop = setInterval(() => {
   if (gameOver) return;
 
-  const personagemPosition = parseFloat(window.getComputedStyle(personagem).bottom.replace('px', ''));
-  const barrilposition = barril.offsetLeft;
+  // pegar as caixas do personagem e do barril
+  const personagemRect = personagem.getBoundingClientRect();
+  const barrilRect = barril.getBoundingClientRect();
 
-  // colisão
-  if (barrilposition <= 120 && barrilposition > 0 && personagemPosition < 12) {
+  // colisão precisa
+  if (
+    personagemRect.left < barrilRect.right &&
+    personagemRect.right > barrilRect.left &&
+    personagemRect.bottom > barrilRect.top
+  ) {
     barril.style.animation = 'none';
-    barril.style.left = `${barrilposition}px`;
+    barril.style.left = `${barril.offsetLeft}px`;
 
     personagem.style.animation = 'none';
-    personagem.style.bottom = `${personagemPosition}px`;
-  
-   personagem.src = `imagens/${nomePersonagem}.png`;
+    personagem.style.bottom = `${parseFloat(window.getComputedStyle(personagem).bottom.replace('px', ''))}px`;
+
+    personagem.src = `imagens/${nomePersonagem}.png`;
     mensagem.style.display = 'flex';
     gameOver = true;
   }
 
   // Contar ponto quando o barril passa
-  if (barrilposition < 0 && !barrilJaContado && !gameOver) {
+  if (barril.offsetLeft < 0 && !barrilJaContado && !gameOver) {
     pontuacao++;
     contador.innerText = pontuacao;
     barrilJaContado = true;
 
-  if (pontuacao >= 15) {
-  clearInterval(loop);
+    if (pontuacao >= 15) {
+      clearInterval(loop);
 
-  // Mostra a mensagem final
-  document.querySelector('.final').style.display = 'flex';
-  // PARAR BARRIL
-  barril.style.animation = 'none';
-  barril.style.left = `${barrilposition}px`;
-}
+      // Mostra a mensagem final
+      document.querySelector('.final').style.display = 'flex';
+
+      // PARAR BARRIL
+      barril.style.animation = 'none';
+      barril.style.left = `${barril.offsetLeft}px`;
+    }
   }
+
   // Quando barril voltar para direita, pode contar de novo
-  if (barrilposition > 200) {
+  if (barril.offsetLeft > 200) {
     barrilJaContado = false;
   }
 
 }, 10);
+
 
 // Teclado
 document.addEventListener('keydown', (e) => {

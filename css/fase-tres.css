@@ -11,9 +11,16 @@ margin: 0; padding: 0; box-sizing: border-box;
  width: 100%;
  height: 100%;
  position: relative;
- border-bottom: 15px solid rgb(35, 160, 35);
+ border-bottom: 30px solid rgb(35, 160, 35);
  background: linear-gradient(#87ceeb, #e0f6ff);
  overflow: hidden;
+}
+
+
+@media (max-width: 480px) {
+  .jogo {
+    border-bottom: 50px solid rgb(35, 160, 35); /* aumenta 15px */
+  }
 }
 
 
@@ -24,32 +31,76 @@ margin: 0; padding: 0; box-sizing: border-box;
 }
 
 
-
+@media (max-width: 480px){
+  .personagem {
+    width: 24vw;  
+    max-width: 100px;
+  }
+}
 .amanda {
   width: 9vw;
   bottom: 0%;
 }
 
+@media (max-width: 480px) {
+  .amanda {
+    
+  width: 14vw;
+  bottom: 0%;
+
+
+  }
+  }
+
 .maria {
   width: 9vw;
-  bottom: 0%;
+   bottom: 0%;
 }
+
+
+@media (max-width: 480px) {
+  .maria {
+    
+  width: 14vw;
+  bottom: 0%;
+
+
+  }
+  }
 
 .gustavo {
   width: 9vw;
- bottom: 0%;  
+   bottom: 0%;
 }
+
+
+
+@media (max-width: 480px) {
+  .gustavo {
+    
+  width: 14vw;
+  bottom: 0%;
+
+
+  }
+  }
 
 .heloisa {
   width: 9vw;
   bottom: 0%;
+
+
 }
 
-.nicolly {
-  width: 9vw;
+@media (max-width: 480px) {
+  .heloisa {
+    
+  width: 14vw;
   bottom: 0%;
-}
 
+
+  }
+  }
 .pirata {
   position: absolute;
   width: 20vw;   
@@ -57,41 +108,101 @@ margin: 0; padding: 0; box-sizing: border-box;
   left: 65vw;  
 }
  
+@media (max-width: 480px) {
+  .pirata {
+  position: absolute;
+  width: 28vw;   
+  bottom: 0%;
+  left: 65vw;  
+
+  }
+  }
+
+  
+
+@media (max-width: 480px) {
+  #mensagempirata {
+    position: absolute;
+    top: 4vh;
+    left: 50%;
+    transform: translateX(-50%); 
+    font-family: komika, sans-serif;
+    text-align: center;
+    white-space: pre-wrap;
+    background-color: #fcecc0;
+    color: #3e2f1c;
+    font-size: 4vw;        
+    font-weight: bold;
+    padding: 0.4 2em; 
+    border: 3px solid #8b5e3c;
+    border-radius: 1.5em;
+    box-shadow: 0.3em 0.3em 0.8em rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    width: 85%;       
+    max-width: 400px; 
+    z-index: 9999;
+    }
+  }
+
 
 #mensagempirata {
   position: absolute;
- top: 8vh;
- left: 50%;
- display: none;
- font-family: komika, sans-serif;
-  text-align: center;
-  white-space: pre-wrap;
-  background-color: #fcecc0;
-  color: #3a230e;
-  font-size: 1.2vw;        
-  font-weight: bold;
-  padding: 0.5em 1em;    
-  border: none;
-  text-decoration: none;
-  border-radius: 1.5em;
-  z-index: 9999;
-  max-width: 450px;
-  color: #3e2f1c; 
-  border: 3px solid #8b5e3c; 
-  box-shadow: 0.3em 0.3em 0.8em rgba(0, 0, 0, 0.4);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
- max-width: 30vw;        
-  z-index: 9999;
+    top: 7vh;
+    left: 55%;
+    transform: translateX(-50%); 
+    
+    display: none;
+    font-family: komika, sans-serif;
+    text-align: center;
+    white-space: pre-wrap;
+    background-color: #fcecc0;
+    color: #3e2f1c;
+    font-size: 1.2vw;        
+    font-weight: bold;
+    padding: 0.5em 1em;    
+    border: 3px solid #8b5e3c; 
+    border-radius: 1.5em;
+    box-shadow: 0.3em 0.3em 0.8em rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    
+    width: 80%;     
+    max-width: 45vw; 
+    z-index: 9999;
 }
 
+@media (max-width: 480px) {
+  #mensagempirata {
+    position: absolute;
+    top: 4vh;
+    left: 50%;
+    transform: translateX(-50%); 
+    font-family: komika, sans-serif;
+    text-align: center;
+    white-space: pre-wrap;
+    background-color: #fcecc0;
+    color: #3e2f1c;
+    font-size: 4vw;        
+    font-weight: bold;
+    padding: 0.4 2em; 
+    border: 3px solid #8b5e3c;
+    border-radius: 1.5em;
+    box-shadow: 0.3em 0.3em 0.8em rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    width: 85%;       
+    max-width: 400px; 
+    z-index: 9999;
+    }
+  }
+
+
 #botaoContinuar {
-  position: absolute;          
-  bottom: 38vh; 
-  right: 28vw;  
+   position: absolute;          
+  bottom: 43vh; 
+  right: 23vw;  
   background-color: #fcecc0;
   color: #3a230e; 
   font-family: komika;
-  font-size: 1.8vw;      
+  font-size: 1.4vw;      
   font-weight: bold;
   padding: 0.8em 1.5em;
   border: 2px solid #8b5e3c; 
@@ -101,7 +212,27 @@ margin: 0; padding: 0; box-sizing: border-box;
   cursor: pointer;
 }
 
+@media (max-width: 480px) {
+  #botaoContinuar {
 
+      position: absolute;          
+  bottom: 33vh; 
+    right: 34vw;
+  background-color: #fcecc0;
+  color: #3a230e; 
+  font-family: komika;
+        font-size: 4vw;
+  font-weight: bold;
+  padding: 0.8em 1.5em;
+  border: 2px solid #8b5e3c; 
+  border-radius: 2em; 
+  box-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.3); 
+  z-index: 9999;
+  cursor: pointer;
+    
+  
+  }
+}
 
 .nuvem {
   position: absolute;
@@ -109,4 +240,17 @@ margin: 0; padding: 0; box-sizing: border-box;
   right: 20vw;  
   width: 25vw;    
   height: auto;
+}
+
+@media (max-width: 480px) {
+  .nuvem {
+
+ position: absolute;
+  top: 15vh;  
+  right: 20vw;  
+  width: 50vw;    
+  height: auto;
+    
+  
+  }
 }

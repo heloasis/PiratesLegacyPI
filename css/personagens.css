@@ -37,6 +37,24 @@ h1{
   text-align: center;
 }
 
+@media (max-width: 480px) {
+h1{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #756136;
+  bottom: 80%;      
+  font-size: 10vw;    
+  font-family: komika;
+  font-weight: 401;  
+  text-shadow: 0.1vw 0.1vw black;
+  text-align: center;
+  top: 3%;
+}
+  
+}
+
+
 
 .cenario {
   position: relative; 
@@ -51,18 +69,28 @@ h1{
 
 .heloisa {
     position: absolute;
-    top: 20%;
-    left: 17%;
+    top: 22%;
+    left: 15%;
     width: 17%;
     cursor: pointer;
     transition: transform 0.2s;
 }
 
-
+@media (max-width: 480px) {
+  .heloisa {
+    position: absolute;
+    top: 27%;
+   left: 15%;
+    width: 35%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
+}
   
 
 
-heloisa:hover { transform: scale(1.1); }
+.heloisa:hover { transform: scale(1.1); }
 
 .gustavo {
     position: absolute;
@@ -74,7 +102,19 @@ heloisa:hover { transform: scale(1.1); }
 }
 
 
+@media (max-width: 480px) {
+  
+  .gustavo {
+ position: absolute;
+    top: 46%;
+    left: 35%;
+    width: 33%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
 
+}
 
 .gustavo:hover { transform: scale(1.1); }
 
@@ -87,6 +127,17 @@ heloisa:hover { transform: scale(1.1); }
     transition: transform 0.2s;
 }
 
+@media (max-width: 480px) {
+  .maria {
+    position: absolute;
+    top: 26%;
+    left: 54%;
+    width: 34%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
+}
 
 
 .maria:hover { transform: scale(1.1); }
@@ -99,7 +150,17 @@ heloisa:hover { transform: scale(1.1); }
     cursor: pointer;
     transition: transform 0.2s;
 }
-
+@media(max-width: 480px) {
+  .amanda {
+    position: absolute;
+    top: 67%;
+    left: 54%;
+    width: 30%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
+}
 
 
 
@@ -112,6 +173,18 @@ heloisa:hover { transform: scale(1.1); }
     width: 16%;
     cursor: pointer;
     transition: transform 0.2s;
+}
+
+@media(max-width: 480px) {
+.nicolly {
+    position: absolute;
+    top: 67%;
+    left: 15%;
+    width: 31%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
 }
 .nicolly:hover { transform: scale(1.1); }
 

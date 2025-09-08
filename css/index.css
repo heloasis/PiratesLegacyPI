@@ -73,19 +73,19 @@ body {
 
 @media (max-width: 768px) {
   .titulo {
-  top: 6vh; 
+  top: 16vh; 
   font-size: 12vw; 
   text-shadow: 0.6vw 0.6vw black;
   text-align: center;
   }
     .titulo2 {
-  top: 24vh; 
+  top: 30vh; 
   font-size: 12vw;
   text-shadow: 0.6vw 0.6vw black;
   }
 
   .botao {
-  bottom: 35vh;
+  bottom: 40vh;
   font-size: 5vw;  
   padding: 2vh 8vw; 
   border-radius: 20px;
