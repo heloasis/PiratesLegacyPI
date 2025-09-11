@@ -223,18 +223,21 @@ to {
   bottom: 35vh; 
     left: 50%;               
   transform: translateX(-50%);
-  background-color: #fcecc0;
-  color: #3a230e; 
+  background: rgba(255, 248, 220, 0.95);
+ color: #3e2f1c; 
   font-family: komika; 
-  font-size: 35px;
+  font-size: 28px;
   font-weight: bold;
-  padding: 10px 25px; 
+  padding: 12px 30px; 
   border: none;
   text-decoration: none; 
-  border-radius: 30px; 
-  box-shadow: 4px 4px rgba(0, 0, 0, 0.3); 
+  border: 3px solid #8b5e3c; 
+  border-radius: 20px; 
+ box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   z-index: 9999;
 }
+
 
 
 @media (max-width: 480px) {
@@ -245,15 +248,16 @@ to {
     left: 50%;               
   transform: translateX(-50%);
   background-color: #fcecc0;
-  color: #3a230e; 
+ background: rgba(255, 248, 220, 0.95);
+ color: #3e2f1c; 
   font-family: komika; 
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
-  padding: 10px 25px; 
-  border: none;
-  text-decoration: none; 
-  border-radius: 30px; 
-  box-shadow: 4px 4px rgba(0, 0, 0, 0.3); 
+  padding: 12px 30px; 
+  border: 3px solid #8b5e3c; 
+  border-radius: 20px; 
+ box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   z-index: 9999;
 }
 
@@ -294,4 +298,11 @@ to {
   font-size: 6vw;
   color: white;
   text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+
+@media (max-width: 480px) {
+#contadorinicial {
+  font-size: 15vw;
+}
 }
