@@ -1,93 +1,101 @@
-const personagem = document.getElementById('personagem');
-const nomePersonagem = localStorage.getItem('personagemEscolhido')
-const pirata = document.getElementById('pirata');
-const mensagempirata = document.getElementById('mensagempirata');
-const textoOriginal = document.getElementById('textoOriginal');
-const botaoContinuar = document.getElementById('botaoContinuar');
+const personagem = document.getElementById('personagem')
+const nomePersonagem = localStorage.getItem('personagemEscolhido') || 'nicolly'
+const pirata = document.getElementById('pirata')
+const mensagempirata = document.getElementById('mensagempirata')
+const textoOriginal = document.getElementById('textoOriginal')
+const botaoContinuar = document.getElementById('botaoContinuar')
 
-let posicaoX = 0;
-const velocidade = 15;
-let mensagemMostrada = false;
-let podeMover = true; // controla se o personagem pode se mover
+let posicaoX = 0
+const velocidade = 15
+let mensagemMostrada = false
+let podeMover = true;
 
-// Começa com o GIF
-personagem.src = `imagens/${nomePersonagem}.gif`;
-personagem.classList.add(nomePersonagem);
+personagem.src = `imagens/${nomePersonagem}.gif`
+personagem.classList.add(nomePersonagem)
 
-// Movimento do personagem
 document.addEventListener('keydown', (evento) => {
-  if (!podeMover) return; // se não puder mover, ignora teclas
-
+  if (!podeMover) return
   if (evento.key === 'ArrowRight') {
-    posicaoX += velocidade;
+    posicaoX += velocidade
   } else if (evento.key === 'ArrowLeft') {
-    posicaoX -= velocidade;
+    posicaoX -= velocidade
   }
-
-  posicaoX = Math.max(0, Math.min(window.innerWidth - 50, posicaoX));
-  personagem.style.left = posicaoX + 'px';
-
+  posicaoX = Math.max(0, Math.min(window.innerWidth - 50, posicaoX))
+  personagem.style.left = posicaoX + 'px'
   verificarColisao();
-});
+})
 
 function verificarColisao() {
-  const rectPersonagem = personagem.getBoundingClientRect();
-  const rectPirata = pirata.getBoundingClientRect();
+  const rectPersonagem = personagem.getBoundingClientRect()
+  const rectPirata = pirata.getBoundingClientRect()
 
   const colidiu = !(
     rectPersonagem.right < rectPirata.left ||
     rectPersonagem.left > rectPirata.right ||
     rectPersonagem.bottom < rectPirata.top ||
     rectPersonagem.top > rectPirata.bottom
-  );
+  )
 
-// Configurações específicas de cada personagem
-const configPersonagens = {
-  amanda:  { width: "210px"},
-  nicolly: { width: "210px"},
-  heloisa: { width: "230px"},
-  maria:   { width: "255px"},
-  gustavo: { width: "215px"}
-};
-
-// Quando encostar na camponesa
-if (colidiu && !mensagemMostrada) {
-  mensagemMostrada = true;
-  podeMover = false;
-  personagem.src = `imagens/${nomePersonagem}.png`;
-
-  // Aplica tamanho e posição personalizados
-  if (configPersonagens[nomePersonagem]) {
-    personagem.style.width = configPersonagens[nomePersonagem].width;
-    personagem.style.top = configPersonagens[nomePersonagem].top;
+  const configPersonagens = {
+    amanda:  { width: "210px" },
+    nicolly: { width: "210px" },
+    heloisa: { width: "230px" },
+    maria:   { width: "255px" },
+    gustavo: { width: "215px" }
   }
 
-  mostrarMensagemDigitando(textoOriginal.innerText);
-}
+  if (colidiu && !mensagemMostrada) {
+    mensagemMostrada = true
+    podeMover = false
+    personagem.src = `imagens/${nomePersonagem}.png`
 
+    if (configPersonagens[nomePersonagem]) {
+      personagem.style.width = configPersonagens[nomePersonagem].width
+      if (configPersonagens[nomePersonagem].top) {
+        personagem.style.top = configPersonagens[nomePersonagem].top
+      }
+    }
+    mostrarMensagemDigitando(textoOriginal.innerText)
+  }
 }
-
 function mostrarMensagemDigitando(texto) {
-  const textoCompleto = texto; // pega o texto atual do HTML
-  textoOriginal.innerText = ''; // limpa antes de digitar
-  mensagempirata.style.display = 'block';
-  botaoContinuar.style.display = 'none';
+  const textoCompleto = texto
+  textoOriginal.innerText = ''; 
+  mensagempirata.style.display = 'block'
+  botaoContinuar.style.display = 'none'
 
-  let index = 0;
+  let index = 0
   const escrever = setInterval(() => {
-    textoOriginal.innerText += textoCompleto.charAt(index);
-    index++;
+    textoOriginal.innerText += textoCompleto.charAt(index)
+    index++
 
     if (index >= textoCompleto.length) {
-      clearInterval(escrever);
-      botaoContinuar.style.display = 'block';
+      clearInterval(escrever)
+      botaoContinuar.style.display = 'block'
     }
-  }, 30);
+  }, 30)
 }
 
 botaoContinuar.addEventListener('click', () => {
-  mensagempirata.style.display = 'none';
-  botaoContinuar.style.display = 'none';
-  podeMover = true; // libera movimento de novo
-});
+  mensagempirata.style.display = 'none'
+  botaoContinuar.style.display = 'none'
+})
 
+
+//movimento com TOUCH
+let andando = false
+
+function andar() {
+if (andando && podeMover) {
+ posicaoX += velocidade
+ personagem.style.left = posicaoX + "px"
+  verificarColisao();
+  requestAnimationFrame(andar)}}
+
+document.addEventListener("touchstart", () => {
+  if (!andando) {
+    andando = true
+    andar()}})
+
+document.addEventListener("touchend", () => {
+  andando = false})

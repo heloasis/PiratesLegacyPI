@@ -1,0 +1,201 @@
+@font-face {
+    font-family: komika;
+    src: url(../fontes/komika_axis/KOMIKAX_.ttf);
+}
+
+ .full-center {
+      min-height: 100vh;    
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+    }
+    .cenario { min-height: 100vh; }
+    .bloco{
+      overflow-y: scroll;
+    }
+
+body{
+  margin: 0; 
+  padding: 0;
+  height: 100%; 
+  overflow: hidden;
+}
+
+.bloco {
+  position: absolute;
+  background-color: #fcecc0;
+  border-radius: 4vw;
+  left: 5%;
+  right: 5%;
+  top: 5%;
+  bottom: 5%;
+  box-shadow: 0.8vw 0.8vw rgb(45, 33, 1);
+}
+
+
+
+.title{
+  top: 14%; 
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #756136;
+  bottom: 80%;      
+  font-size: 3vw;    
+  font-family: komika;
+  font-weight: 401;  
+  text-shadow: 0.1vw 0.1vw black;
+  text-align: center; 
+}
+
+@media (max-width: 480px) {
+.title{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #756136;
+  bottom: 80%;      
+  font-size: 8vw;    
+  font-family: komika;
+  font-weight: 401;  
+  text-shadow: 0.1vw 0.1vw black;
+  text-align: center;
+  top: 3%;
+}
+  
+}
+
+
+
+.cenario {
+  position: relative; 
+  width: 100vw; 
+  height: 100vh; 
+  background-image: url('../imagens/cenario.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+
+.heloisa {
+    position: absolute;
+    top: 22%;
+    left: 15%;
+    width: 17%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+@media (max-width: 480px) {
+  .heloisa {
+    position: absolute;
+    top: 27%;
+   left: 15%;
+    width: 35%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
+}
+  
+
+
+.heloisa:hover { transform: scale(1.1); }
+
+.gustavo {
+    position: absolute;
+    top: 20%;
+    left: 42%;
+    width: 16%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+
+@media (max-width: 480px) {
+  
+  .gustavo {
+ position: absolute;
+    top: 46%;
+    left: 35%;
+    width: 33%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
+
+}
+
+.gustavo:hover { transform: scale(1.1); }
+
+.maria {
+    position: absolute;
+    top: 20%;
+    left: 67%;
+    width: 18%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+@media (max-width: 480px) {
+  .maria {
+    position: absolute;
+    top: 26%;
+    left: 54%;
+    width: 34%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
+}
+
+
+.maria:hover { transform: scale(1.1); }
+
+.amanda {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    width: 16%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+@media(max-width: 480px) {
+  .amanda {
+    position: absolute;
+    top: 67%;
+    left: 54%;
+    width: 30%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
+}
+
+
+
+.amanda:hover { transform: scale(1.1); }
+
+.nicolly {
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    width: 16%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+@media(max-width: 480px) {
+.nicolly {
+    position: absolute;
+    top: 67%;
+    left: 15%;
+    width: 31%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
+}
+.nicolly:hover { transform: scale(1.1); }
+

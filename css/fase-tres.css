@@ -11,8 +11,8 @@ margin: 0; padding: 0; box-sizing: border-box;
  width: 100%;
  height: 100%;
  position: relative;
- border-bottom: 30px solid rgb(35, 160, 35);
- background: linear-gradient(#87ceeb, #e0f6ff);
+ border-bottom: 30px solid rgb(17, 78, 17);
+ background: linear-gradient(#173083, #6d7bc1);
  overflow: hidden;
 }
 
@@ -197,7 +197,7 @@ margin: 0; padding: 0; box-sizing: border-box;
 
 #botaoContinuar {
    position: absolute;          
-  bottom: 43vh; 
+  bottom: 41vh; 
   right: 23vw;  
   background-color: #fcecc0;
   color: #3a230e; 
@@ -253,4 +253,36 @@ margin: 0; padding: 0; box-sizing: border-box;
     
   
   }
+}
+.estrelas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;   
+  height: 4px;
+  background: #ffeb3b; 
+  border-radius: 50%;  
+  box-shadow: 
+    5vw 10vh white,
+    15vw 30vh #fff9c4,
+    25vw 50vh #ffe082,
+    35vw 70vh white,
+    45vw 20vh #ffeb3b,
+    55vw 60vh white,
+    65vw 15vh #fff176,
+    75vw 40vh white,
+    85vw 80vh #ffeb3b,
+    95vw 25vh white,
+
+    10vw 60vh #fff59d,
+    20vw 15vh #ffeb3b,
+    30vw 35vh white,
+    40vw 75vh #fff176,
+    50vw 5vh white,
+    60vw 45vh #ffe082,
+    70vw 25vh white,
+    80vw 55vh #fff9c4,
+    90vw 10vh white,
+    100vw 65vh #ffeb3b;
+
 }

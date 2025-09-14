@@ -46,12 +46,12 @@ h1
 	margin-bottom:28px;
 }
 
-
-.our-team-main img
-{
-	border-radius:50%;
-	margin-bottom:20px;
-	width: 90px;
+.our-team-main img {
+  width: 150px;   
+  height: 150px;   
+  object-fit: cover; 
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .our-team-main h3
@@ -73,7 +73,7 @@ h1
 	top:0;
 	left:0;
 	padding:5px 15px 0 15px;
-	text-align:left;
+	text-align: center; 
 	background:#fff;
 	
 }
@@ -102,6 +102,34 @@ h1
 	transition:0.5s;
 }
 
+
+.title{
+  left: 50%;
+  transform: translateX(-50%);
+  color: #756136;
+  font-size: 3vw;    
+  font-family: komika;
+  font-weight: 401;  
+  text-shadow: 0.1vw 0.1vw black;
+  text-align: center; 
+}
+
+@media (max-width: 480px) {
+.title{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #756136;
+  bottom: 80%;      
+  font-size: 8vw;    
+  font-family: komika;
+  font-weight: 401;  
+  text-shadow: 0.1vw 0.1vw black;
+  text-align: center;
+  top: 3%;
+}
+}
+
 /*our-team-main*/
 
 
@@ -119,16 +147,19 @@ h1
 
 </ul>
 
-  <div class="cenario" style="filter: brightness(50%);"></div><div class="bloco" style="margin-top: 6vh;"><div class="text-start mt-4">
-<h1 style="color: #756136;
-  font-size: 3vw;    
-  font-family: komika;
-  font-weight: 401;  
-  text-shadow: 0.1vw 0.1vw black;
-  text-align: center;
-  margin-top: 40px;">Conheça nossa equipe</h1><a href="index.html">
-    <i class="bi bi-arrow-90deg-left fs-1 ms-5"></i></a>
-  </div>	
+  <div class="cenario" style="filter: brightness(50%);"></div><div class="bloco" style="margin-top: 6vh;">
+<div class="container text-start">
+  <a href="index.html">
+    <i class="bi bi-arrow-90deg-left fs-1"></i>
+  </a>
+</div>
+	<div class="text-start mt-4">
+<div class="container mt-4">
+  <h1 class="title">
+    Conheça nossa equipe
+  </h1>
+</div>
+
 	<div class="container">
 	<div class="row">
 	
@@ -138,144 +169,78 @@ h1
 	
 	<div class="team-front">
 	<img src="http://placehold.it/110x110/9c27b0/fff?text=Dilip" class="img-fluid" />
-	<h3>Dilip Kevat</h3>
-	<p>Web Designer</p>
 	</div>
 	
 	<div class="team-back">
-	<span>
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque penatibus et magnis dis parturient montes,
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque.
-	</span>
+	<span>Amanda Xavier</span>
 	</div>
 	
 	</div>
 	</div>
-	<!--team-1-->
-	
-	<!--team-2-->
+
 	<div class="col-lg-4">
 	<div class="our-team-main">
 	
 	<div class="team-front">
-	<img src="imagens/teste.webp" class="img-fluid" />
-	<h3>Maria heloisa</h3>
-	<p>Web Designer</p>
+	<img src="imagens/gu.jpg" class="img-fluid" />
 	</div>
 	
 	<div class="team-back">
 	<span>
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque penatibus et magnis dis parturient montes,
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque.
+	Gustavo Hirayama
 	</span>
 	</div>
 	
 	</div>
 	</div>
-	<!--team-2-->
-	
-	<!--team-3-->
 	<div class="col-lg-4">
 	<div class="our-team-main">
 	
 	<div class="team-front">
-	<img src="http://placehold.it/110x110/607d8b/fff?text=Dilip" class="img-fluid" />
-	<h3>Dilip Kevat</h3>
-	<p>Web Designer</p>
+	<img src="imagens/helo.jpg" class="img-fluid" />
 	</div>
 	
 	<div class="team-back">
 	<span>
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque penatibus et magnis dis parturient montes,
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque.
+	Heloisa Ferreira
 	</span>
 	</div>
 	
 	</div>
 	</div>
-	<!--team-3-->
-	
-	<!--team-4-->
+
 	<div class="col-lg-4">
 	<div class="our-team-main">
 	
 	<div class="team-front">
-	<img src="http://placehold.it/110x110/4caf50/fff?text=Dilip" class="img-fluid" />
-	<h3>Dilip Kevat</h3>
-	<p>Web Designer</p>
+	<img src="imagens/mah.jpg" class="img-fluid" />
 	</div>
 	
 	<div class="team-back">
 	<span>
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque penatibus et magnis dis parturient montes,
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque.
+	Maria Heloisa
 	</span>
 	</div>
 	
 	</div>
 	</div>
-	<!--team-4-->
-	
-	<!--team-5-->
+
 	<div class="col-lg-4">
 	<div class="our-team-main">
 	
 	<div class="team-front">
 	<img src="http://placehold.it/110x110/e91e63/fff?text=Dilip" class="img-fluid" />
-	<h3>Dilip Kevat</h3>
-	<p>Web Designer</p>
+
 	</div>
 	
 	<div class="team-back">
 	<span>
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque penatibus et magnis dis parturient montes,
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque.
+	Nicolly Freitas
 	</span>
 	</div>
-	
-	</div>
-	</div>
-	<!--team-5-->
-	
-	<!--team-6-->
-	<div class="col-lg-4">
-	<div class="our-team-main">
-	
-	<div class="team-front">
-	<img src="http://placehold.it/110x110/2196f3/fff?text=Dilip" class="img-fluid" />
-	<h3>Dilip Kevat</h3>
-	<p>Web Designer</p>
-	</div>
-	
-	<div class="team-back">
-	<span>
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque penatibus et magnis dis parturient montes,
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque.
-	</span>
-	</div>
-	
-	</div>
-	</div>
-	<!--team-6-->
-	
-	
-	
 	</div>
 	</div>
 
-  </div>
   
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

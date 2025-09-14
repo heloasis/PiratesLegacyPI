@@ -1,48 +1,41 @@
-const personagem = document.getElementById('personagem');
-const nomePersonagem = localStorage.getItem('personagemEscolhido') || 'nicolly';
-const pescador = document.getElementById('pescador');
-const mensagempescador = document.getElementById('mensagempescador');
-const textoOriginal = document.getElementById('textoOriginal');
-const botaoContinuar = document.getElementById('botaoContinuar');
+const personagem = document.getElementById('personagem')
+const nomePersonagem = localStorage.getItem('personagemEscolhido') || 'nicolly'
+const pescador = document.getElementById('pescador')
+const mensagempescador = document.getElementById('mensagempescador')
+const textoOriginal = document.getElementById('textoOriginal')
+const botaoContinuar = document.getElementById('botaoContinuar')
 
-let posicaoX = 0;
-const velocidade = 15;
-let mensagemMostrada = false;
-let podeMover = true; 
+let posicaoX = 0
+const velocidade = 15
+let mensagemMostrada = false
+let podeMover = true;
 
-// Começa com o GIF
-personagem.src = `imagens/${nomePersonagem}.gif`;
-personagem.classList.add(nomePersonagem);
+personagem.src = `imagens/${nomePersonagem}.gif`
+personagem.classList.add(nomePersonagem)
 
-// Movimento com TECLADO
 document.addEventListener('keydown', (evento) => {
-  if (!podeMover) return; // se não puder mover, ignora teclas
-
+  if (!podeMover) return
   if (evento.key === 'ArrowRight') {
-    posicaoX += velocidade;
+    posicaoX += velocidade
   } else if (evento.key === 'ArrowLeft') {
-    posicaoX -= velocidade;
+    posicaoX -= velocidade
   }
-
-  // limita dentro da tela
-  posicaoX = Math.max(0, Math.min(window.innerWidth - 50, posicaoX));
-  personagem.style.left = posicaoX + 'px';
-
+  posicaoX = Math.max(0, Math.min(window.innerWidth - 50, posicaoX))
+  personagem.style.left = posicaoX + 'px'
   verificarColisao();
-});
+})
 
 function verificarColisao() {
-  const rectPersonagem = personagem.getBoundingClientRect();
-  const rectPescador = pescador.getBoundingClientRect();
+  const rectPersonagem = personagem.getBoundingClientRect()
+  const rectPescador = pescador.getBoundingClientRect()
 
   const colidiu = !(
     rectPersonagem.right < rectPescador.left ||
     rectPersonagem.left > rectPescador.right ||
     rectPersonagem.bottom < rectPescador.top ||
     rectPersonagem.top > rectPescador.bottom
-  );
+  )
 
-  // Configurações específicas de cada personagem
   const configPersonagens = {
     amanda:  { width: "210px" },
     nicolly: { width: "210px" },
@@ -51,45 +44,41 @@ function verificarColisao() {
     gustavo: { width: "215px" }
   };
 
-  // Quando encostar no pescador
   if (colidiu && !mensagemMostrada) {
-    mensagemMostrada = true;
-    podeMover = false;
-    personagem.src = `imagens/${nomePersonagem}.png`;
+    mensagemMostrada = true
+    podeMover = false
+    personagem.src = `imagens/${nomePersonagem}.png`
 
-    // Aplica tamanho e posição personalizados
     if (configPersonagens[nomePersonagem]) {
-      personagem.style.width = configPersonagens[nomePersonagem].width;
+      personagem.style.width = configPersonagens[nomePersonagem].width
       if (configPersonagens[nomePersonagem].top) {
-        personagem.style.top = configPersonagens[nomePersonagem].top;
+        personagem.style.top = configPersonagens[nomePersonagem].top
       }
     }
-
-    mostrarMensagemDigitando(textoOriginal.innerText);
+    mostrarMensagemDigitando(textoOriginal.innerText)
   }
 }
-
 function mostrarMensagemDigitando(texto) {
-  const textoCompleto = texto; 
+  const textoCompleto = texto
   textoOriginal.innerText = ''; 
-  mensagempescador.style.display = 'block';
-  botaoContinuar.style.display = 'none';
+  mensagempescador.style.display = 'block'
+  botaoContinuar.style.display = 'none'
 
-  let index = 0;
+  let index = 0
   const escrever = setInterval(() => {
-    textoOriginal.innerText += textoCompleto.charAt(index);
-    index++;
+    textoOriginal.innerText += textoCompleto.charAt(index)
+    index++
 
     if (index >= textoCompleto.length) {
       clearInterval(escrever);
       botaoContinuar.style.display = 'block';
     }
-  }, 30);
+  }, 30)
 }
 
 botaoContinuar.addEventListener('click', () => {
-  mensagempescador.style.display = 'none';
-  botaoContinuar.style.display = 'none';
+  mensagempescador.style.display = 'none'
+  botaoContinuar.style.display = 'none'
 });
 
 
@@ -99,8 +88,8 @@ let andando = false
 function andar() {
 if (andando && podeMover) {
  posicaoX += velocidade
- personagem.style.left = posicaoX + "px";
-  verificarColisao(); 
+ personagem.style.left = posicaoX + "px"
+  verificarColisao();
   requestAnimationFrame(andar)}}
 
 document.addEventListener("touchstart", () => {
