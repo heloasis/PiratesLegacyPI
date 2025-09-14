@@ -12,7 +12,7 @@ let pedraJaContado = false
 const jump = () => {
   personagem.classList.add('pulo')
   setTimeout(() => {
- personagem.classList.remove('pulo')}, 500)
+ personagem.classList.remove('pulo')}, 600)
 }
 
 const loop = setInterval(() => {

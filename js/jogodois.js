@@ -39,7 +39,7 @@ const loop = setInterval(() => {
     contador.innerText = pontuacao
     bandeiraJaContado = true
 
-    if (pontuacao >= 25
+    if (pontuacao >= 20
     ) {
       clearInterval(loop)
       document.querySelector('.final').style.display = 'flex'

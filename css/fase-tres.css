@@ -19,7 +19,7 @@ margin: 0; padding: 0; box-sizing: border-box;
 
 @media (max-width: 480px) {
   .jogo {
-    border-bottom: 50px solid rgb(35, 160, 35); /* aumenta 15px */
+  border-bottom: 30px solid rgb(17, 78, 17);
   }
 }
 

@@ -36,7 +36,7 @@ margin: 0; padding: 0; box-sizing: border-box;
   position: absolute;
   width: 12vw;  
   bottom: 0;
-  left: 14vw;  
+  left: 15vw;  
 }
 
 
@@ -106,7 +106,7 @@ margin: 0; padding: 0; box-sizing: border-box;
   .barril {
   position: absolute;
   bottom: 0;
-  width: 10vw; 
+  width: 15vw; 
 }
 }
 
@@ -119,6 +119,7 @@ margin: 0; padding: 0; box-sizing: border-box;
 .pulo {
    animation: pulo 810ms ease-out;
 }
+
 
 @keyframes barril {
 from {
@@ -133,24 +134,25 @@ to {
 
 
 @keyframes pulo {
-
-0% {
+  0% {
     bottom: 0;
-}
-40% {
-    bottom: 300px;
-}
-50% {
-    bottom: 300px;
-}
-60% {
-    bottom: 300px;
-}
-100% {
+  }
+  40% {
+    bottom: 30vh;
+  }
+  50% {
+    bottom: 30vh;
+  }
+  60% {
+    bottom: 30vh;
+  }
+  100% {
     bottom: 0;
+  }
 }
 
-}
+
+
 
 .mensagem {
   position: fixed;

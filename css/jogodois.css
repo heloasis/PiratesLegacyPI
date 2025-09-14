@@ -106,7 +106,7 @@ background: linear-gradient( #ffc7dd, #fab35c);
 .bandeira {
   position: absolute;
   bottom: 0;
-  width: 18vw; 
+  width: 20vw; 
     z-index: 9999;                                                                                                                                                                                                                   
 }
 }

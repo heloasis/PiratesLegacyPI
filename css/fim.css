@@ -119,8 +119,10 @@ margin: 0; padding: 0; box-sizing: border-box;
 
 #botaoContinuar {
   position: absolute;          
-  bottom: 38vh; 
-  right: 45%;  
+  bottom: 32vh; 
+  text-align: center;
+  left: 50%;
+transform: translate(-50%); 
   color: #ffffff; 
   font-family: komika;
   font-size: 1.8vw;      
@@ -131,11 +133,11 @@ margin: 0; padding: 0; box-sizing: border-box;
   #botaoContinuar{
 
   position: absolute;          
-  bottom: 38vh; 
-  right: 22%;  
+  left: 50%;
+transform: translate(-50%);  
   color: #ffffff; 
   font-family: komika;
-  font-size: 8vw;      
+  font-size: 6vw;      
   cursor: pointer;
 }
   }

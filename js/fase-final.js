@@ -82,3 +82,21 @@ botaoContinuar.addEventListener('click', () => {
   podeMover = true
 })
 
+
+//movimento com TOUCH
+let andando = false
+function andar() {
+if (andando && podeMover) {
+ posicaoX += velocidade
+ personagem.style.left = posicaoX + "px"
+  verificarColisao();
+  requestAnimationFrame(andar)}}
+
+document.addEventListener("touchstart", () => {
+  if (!andando) {
+    andando = true
+    andar()}})
+
+document.addEventListener("touchend", () => {
+  andando = false})
+
