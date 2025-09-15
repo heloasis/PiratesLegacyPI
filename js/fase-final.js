@@ -14,18 +14,26 @@ personagem.src = `imagens/${nomePersonagem}.gif`
 personagem.classList.add(nomePersonagem)
 bau.src = "imagens/bau.png"
 
+const jump = () => {
+  personagem.classList.add('pulo')
+  setTimeout(() => {
+ personagem.classList.remove('pulo')}, 700)
+}
 document.addEventListener('keydown', (evento) => {
   if (!podeMover) return
-  if (evento.key === 'ArrowRight') {
+
+  if (evento.code === 'ArrowRight') {
     posicaoX += velocidade
-  } else if (evento.key === 'ArrowLeft') {
+  } else if (evento.code === 'ArrowLeft') {
     posicaoX -= velocidade
-  }
+  } else if (evento.code === 'Space') {
+    jump()}
 
   posicaoX = Math.max(0, Math.min(window.innerWidth - 50, posicaoX))
   personagem.style.left = posicaoX + 'px'
-  verificarColisao();
+  verificarColisao()
 })
+
 
 function verificarColisao() {
   const rectPersonagem = personagem.getBoundingClientRect()

@@ -6,6 +6,30 @@ html, body {
 margin: 0; padding: 0; box-sizing: border-box;
 }
 
+.pulo {
+   animation: pulo 810ms ease-out;
+}
+
+
+@keyframes pulo {
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 30vh;
+  }
+  50% {
+    bottom: 30vh;
+  }
+  60% {
+    bottom: 30vh;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+
 
 .jogo {
  width: 100%;
