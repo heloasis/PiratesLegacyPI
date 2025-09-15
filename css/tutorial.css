@@ -1,0 +1,124 @@
+@font-face {
+  font-family: komika;
+  src: url(../fontes/komika_axis/KOMIKAX_.ttf);
+ }
+
+  body {
+  margin: 0;
+   padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: komika, sans-serif;
+ }
+
+    .cenario {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../imagens/cenario.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(60%);
+}
+
+    .bloco {
+   position: absolute;
+  background-color: #fcecc0;
+  border-radius: 2rem;
+  left: 5%;
+  right: 5%;
+  top: 8%;
+  bottom: 8%;
+  box-shadow: 0.8vw 0.8vw rgb(45, 33, 1);
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+    .title {
+      text-align: center;
+      color: #3a230e;
+      font-size: 3vw;
+      font-weight: bold;
+      text-shadow: 0.15vw 0.15vw black;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      .title {
+        font-size: 8vw;    }
+  }
+
+  .card-custom {
+    background: #fff8dc;
+    border: 3px solid #8b5e3c;
+    border-radius: 1.5rem;
+    box-shadow: 4px 4px rgba(0,0,0,0.3);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    color: #3e2f1c;
+  }
+
+  .card-custom h3 {
+    margin-bottom: 1rem;
+    color: #3a230e;
+    font-weight: bold;
+  }
+
+  .icon-tutorial {
+    font-size: 3rem;
+   margin-bottom: 1rem;
+    color: #8b5e3c;
+  }
+
+    .title{
+  top: 3%; 
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #756136;
+  bottom: 80%;      
+  font-size: 3vw;    
+  font-family: komika;
+  font-weight: 401;  
+  text-shadow: 0.1vw 0.1vw black;
+  text-align: center; 
+}
+
+@media (max-width: 480px) {
+.title{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #756136;
+  bottom: 80%;      
+  font-size: 8vw;    
+  font-family: komika;
+  font-weight: 401;  
+  text-shadow: 0.1vw 0.1vw black;
+  text-align: center;
+  top: 3%;
+}}
+#botaoContinuar {
+  display: block;
+  margin: 2rem auto 0 auto; 
+  background-color: #fcecc0;
+  color: #3a230e;
+  font-family: komika;
+  font-size: 1.4vw;
+  font-weight: bold;
+  padding: 0.8em 1.5em;
+  border: 2px solid #8b5e3c;
+  border-radius: 2em;
+  box-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  #botaoContinuar {
+    font-size: 4vw;
+    padding: 0.8em 1.5em;
+    margin-top: 3rem; 
+}}
