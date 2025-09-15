@@ -111,7 +111,7 @@ margin: 0; padding: 0; box-sizing: border-box;
 @media (max-width: 480px) {
   .pirata {
   position: absolute;
-  width: 28vw;   
+  width: 30vw;   
   bottom: 0%;
   left: 65vw;  
 
