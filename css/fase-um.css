@@ -22,6 +22,26 @@ margin: 0; padding: 0; box-sizing: border-box;
   }
 }
 
+.back-button { 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #ffe491;
+  color: #3a230e;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  margin: 20px;
+}
+
+.back-button:hover {
+  background-color: #f9d88d;
+  transform: scale(1.1);
+}
 
 .pulo {
    animation: pulo 810ms ease-out;
@@ -300,3 +320,33 @@ bottom: 0;
   }
 }
 
+#tutorial {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #3a230e;
+  font-family: komika, sans-serif;
+  font-size: 1.2vw;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em 2em;
+  border-radius: 1.5em;
+  border: 3px solid #8b5e3c;
+  box-shadow: 0.3em 0.3em 0.8em rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  animation: aparecer 1.2s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@media (max-width: 480px) {
+  #tutorial {
+    font-size: 4vw;
+    width: 85%;
+  }
+}

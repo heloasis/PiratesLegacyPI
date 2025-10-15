@@ -1,40 +1,54 @@
 @font-face {
-    font-family: komika;
-    src: url(../fontes/komika_axis/KOMIKAX_.ttf);
+  font-family: komika;
+  src: url(../fontes/komika_axis/KOMIKAX_.ttf);
 }
 
- .full-center {
-      min-height: 100vh;    
-      display: flex;
-      justify-content: center; 
-      align-items: center; 
-    }
-    .cenario { min-height: 100vh; }
-    .bloco{
-      overflow-y: scroll;
-    }
+.full-center {
+  min-height: 100vh;    
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
 
-body{
-  margin: 0; 
-  padding: 0;
-  height: 100%; 
-  overflow: hidden;
+.cenario {
+  position: relative; 
+  width: 100vw; 
+  height: 100vh; 
+  background-image: url('../imagens/cenario.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  min-height: 100vh;
 }
 
 .bloco {
   position: absolute;
-  background-color: #fcecc0;
+  background: linear-gradient(180deg, #fff8dc 0%, #fcecc0 100%);
   border-radius: 4vw;
   left: 5%;
   right: 5%;
   top: 5%;
   bottom: 5%;
   box-shadow: 0.8vw 0.8vw rgb(45, 33, 1);
+  border: 0.4vw solid #3a230e;
+  padding: 2vw;
+  overflow-y: auto;
+  animation: fadeIn 0.8s ease;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
+body {
+  margin: 0; 
+  padding: 0;
+  height: 100%; 
+  overflow: hidden;
+}
 
-.title{
+.title {
   top: 14%; 
   position: relative;
   left: 50%;
@@ -46,156 +60,119 @@ body{
   font-weight: 401;  
   text-shadow: 0.1vw 0.1vw black;
   text-align: center; 
+  letter-spacing: 0.1vw;
 }
 
 @media (max-width: 480px) {
-.title{
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #756136;
-  bottom: 80%;      
-  font-size: 8vw;    
-  font-family: komika;
-  font-weight: 401;  
-  text-shadow: 0.1vw 0.1vw black;
-  text-align: center;
-  top: 3%;
-}
-  
+  .title {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #756136;     
+    font-size: 8vw;    
+    font-family: komika;
+    font-weight: 401;  
+    text-shadow: 0.1vw 0.1vw black;
+    text-align: center;
+    top: 3%;
+  }
 }
 
-
-
-.cenario {
-  position: relative; 
-  width: 100vw; 
-  height: 100vh; 
-  background-image: url('../imagens/cenario.png');
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center; 
-}
-
-
-.heloisa {
-    position: absolute;
-    top: 22%;
-    left: 15%;
-    width: 17%;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-@media (max-width: 480px) {
-  .heloisa {
-    position: absolute;
-    top: 27%;
-   left: 15%;
-    width: 35%;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-  
-}
-  
-
-
-.heloisa:hover { transform: scale(1.1); }
-
-.gustavo {
-    position: absolute;
-    top: 20%;
-    left: 42%;
-    width: 16%;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-
-@media (max-width: 480px) {
-  
-  .gustavo {
- position: absolute;
-    top: 46%;
-    left: 35%;
-    width: 33%;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-  
-
-}
-
-.gustavo:hover { transform: scale(1.1); }
-
-.maria {
-    position: absolute;
-    top: 20%;
-    left: 67%;
-    width: 18%;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-@media (max-width: 480px) {
-  .maria {
-    position: absolute;
-    top: 26%;
-    left: 54%;
-    width: 34%;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-  
-}
-
-
-.maria:hover { transform: scale(1.1); }
-
-.amanda {
-    position: absolute;
-    top: 50%;
-    left: 55%;
-    width: 16%;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-@media(max-width: 480px) {
-  .amanda {
-    position: absolute;
-    top: 67%;
-    left: 54%;
-    width: 30%;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-  
-}
-
-
-
-.amanda:hover { transform: scale(1.1); }
-
+.heloisa,
+.gustavo,
+.maria,
+.amanda,
 .nicolly {
-    position: absolute;
-    top: 50%;
-    left: 27%;
-    width: 16%;
-    cursor: pointer;
-    transition: transform 0.2s;
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-@media(max-width: 480px) {
-.nicolly {
-    position: absolute;
-    top: 67%;
-    left: 15%;
-    width: 31%;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-  
-}
-.nicolly:hover { transform: scale(1.1); }
+.heloisa { top: 22%; left: 15%; width: 17%; }
+.gustavo { top: 20%; left: 42%; width: 16%; }
+.maria   { top: 20%; left: 67%; width: 18%; }
+.amanda  { top: 50%; left: 55%; width: 16%; }
+.nicolly { top: 50%; left: 27%; width: 16%; }
 
+.heloisa:hover,
+.gustavo:hover,
+.maria:hover,
+.amanda:hover,
+.nicolly:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+  .heloisa { top: 27%; left: 15%; width: 35%; }
+  .gustavo { top: 46%; left: 35%; width: 33%; }
+  .maria   { top: 26%; left: 54%; width: 34%; }
+  .amanda  { top: 67%; left: 54%; width: 30%; }
+  .nicolly { top: 67%; left: 15%; width: 31%; }
+}
+
+
+.back-button { 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #ffe491;
+  color: #3a230e;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  margin: 20px;
+}
+
+.back-button:hover {
+  background-color: #f9d88d;
+  transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    margin: 10px;
+  }
+}
+
+h3 {
+  color: #3a230e;
+  font-family: komika, sans-serif;
+  text-shadow: 0.05vw 0.05vw rgba(0,0,0,0.2);
+  letter-spacing: 0.1vw;
+}
+
+ul {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1.5vw;
+  border-radius: 1vw;
+  box-shadow: 0 0.3vw 0.6vw rgba(0,0,0,0.1);
+}
+
+.bi {
+  vertical-align: middle;
+}
+
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffe491;
+  padding: 0.6vw 1.2vw;
+  border-radius: 1.5vw;
+  color: #3a230e;
+  font-family: komika, sans-serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.instagram-link:hover {
+  background-color: #f9d88d;
+  transform: scale(1.05);
+}

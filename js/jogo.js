@@ -104,3 +104,23 @@ document.addEventListener('touchstart', (e) => {
     jump()
   }
 })
+
+const falaNpc = document.getElementById('fala-npc')
+const botaoPular = document.getElementById('botao-pular')
+const textoFala = document.getElementById('texto-fala')
+
+// Exibir fala ao carregar
+window.addEventListener('load', () => {
+  falaNpc.style.display = 'flex'
+  // bloquear ações até o jogador fechar a fala
+  document.removeEventListener("touchstart", pular)
+  document.removeEventListener("keydown", jump)
+})
+
+// Ao clicar em "Pular fala"
+botaoPular.addEventListener('click', () => {
+  falaNpc.style.display = 'none'
+  // reativar controles
+  document.addEventListener("touchstart", pular)
+  document.addEventListener("keydown", jump)
+})

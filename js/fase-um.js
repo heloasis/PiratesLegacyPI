@@ -4,6 +4,8 @@ const pescador = document.getElementById('pescador')
 const mensagempescador = document.getElementById('mensagempescador')
 const textoOriginal = document.getElementById('textoOriginal')
 const botaoContinuar = document.getElementById('botaoContinuar')
+const tutorial = document.getElementById('tutorial');
+
 
 let posicaoX = 0
 const velocidade = 15
@@ -20,6 +22,9 @@ const jump = () => {
 }
 document.addEventListener('keydown', (evento) => {
   if (!podeMover) return
+
+  if (tutorial) tutorial.style.display = 'none';
+
 
   if (evento.code === 'ArrowRight') {
     posicaoX += velocidade
@@ -89,6 +94,13 @@ botaoContinuar.addEventListener('click', () => {
   botaoContinuar.style.display = 'none'
 });
 
+document.addEventListener("touchstart", () => {
+  if (tutorial) tutorial.style.display = 'none';
+  if (!andando) {
+    andando = true;
+    andar();
+  }
+});
 
 //movimento com TOUCH
 let andando = false
