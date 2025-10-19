@@ -6,14 +6,22 @@
     <title>Gameplay</title>
     <link rel="stylesheet" href="css/jogo.css">
     <script src="js/jogo.js" defer></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
-    
+  
 <div class="pontuacao">
-Objetivo: 15 pontos – Pontos: <span id="contador">0</span>
+Objetivo: 20 pontos – Pontos: <span id="contador">0</span>
 </div>
- <div class="container text-start">
-  <a href="jogodois.html" class="back-button" title="Voltar">
+
+ <a href="jogodois.html">
+<div id="overlay">
+  <div id="contadorinicial">3</div>
+</div>
+  <i class="bi bi-arrow-90deg-left" style="font-size: 3rem; position: absolute; left: 20px; top: 20px;"></i></a>
+<div class="jogo">
+<div class="container text-start">
+  <a href="fase-um.html" class="back-button" title="Voltar">
     <i class="bi bi-arrow-left-short"></i>
   </a>
 </div>
@@ -23,10 +31,6 @@ Objetivo: 15 pontos – Pontos: <span id="contador">0</span>
 </div>
 
 
-<div id="overlay">
-  <div id="contadorinicial">3</div>
-</div>
-
 <div class="mensagem" style="display: none;">
 <h1>Você perdeu! Pressione qualquer tecla para jogar de novo. </h1>
 </div>
@@ -34,6 +38,7 @@ Objetivo: 15 pontos – Pontos: <span id="contador">0</span>
 <div class="final" style="display: none;">
   <h1>Continuar</h1>
 </div></a>
+    <div id="tutorial"></div>
 
 </body>
 </html>     

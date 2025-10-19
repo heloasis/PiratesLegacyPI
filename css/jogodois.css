@@ -45,6 +45,7 @@ background: linear-gradient( #ffc7dd, #fab35c);
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   margin: 20px;
+  z-index: 10000;
 }
 
 .back-button:hover {
@@ -258,6 +259,31 @@ to {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 
 }
+#tutorial {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #3a230e;
+  font-family: komika, sans-serif;
+  font-size: 1.2vw;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em 2em;
+  border-radius: 1.5em;
+  border: 3px solid #8b5e3c;
+  box-shadow: 0.3em 0.3em 0.8em rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+
+}
+
+@media (max-width: 480px) {
+  #tutorial {
+    font-size: 4vw;
+    width: 85%;
+  }
+}
 
 @media (max-width: 480px) {
 
@@ -279,24 +305,6 @@ to {
   z-index: 9999;
 }
 
-
-}
-
-
-.nuvem {     
-  width: 26vw;
-  top: 16vh; 
-  right: 12vw;    
-  position: absolute;
-}
-
-@media (max-width: 480px) {
-  .nuvem {     
-  width: 46vw;
-  top: 28vh; 
-  right: 12vw;    
-  position: absolute;
-}
 
 }
 
@@ -324,3 +332,4 @@ to {
   font-size: 15vw;
 }
 }
+

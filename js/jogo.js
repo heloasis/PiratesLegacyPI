@@ -3,17 +3,56 @@ const nomePersonagem = localStorage.getItem('personagemEscolhido') || 'nicolly';
 const barril = document.querySelector('.barril')
 const mensagem = document.querySelector('.mensagem')
 const contador = document.getElementById('contador')
+const tutorial = document.getElementById('tutorial');
 
 
 let pontuacao = 0
 let gameOver = false
 let barrilJaContado = false
+let jogoComecou = false;
+let pulando = false;
 
-const jump = () => {
-  personagem.classList.add('pulo')
-  setTimeout(() => {
- personagem.classList.remove('pulo')}, 700)
+
+const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+if (isMobile) {
+  tutorial.innerHTML = `👉 Toque e segure na tela para andar`;
+} else {
+  tutorial.innerHTML = `➡️ Pressione ESPAÇO para pular os obstáculos! <br>`;
 }
+const jump = () => {
+  if (gameOver || pulando) return;
+
+  if (!jogoComecou) {
+    iniciarJogo();
+    tutorial.style.display = 'none';
+    jogoComecou = true;
+  }
+
+  pulando = true;
+  personagem.classList.add('pulo');
+  setTimeout(() => {
+    personagem.classList.remove('pulo');
+    pulando = false;
+  }, 700);
+};
+
+document.addEventListener('keydown', (e) => {
+  if (gameOver) {
+    location.reload();
+  } else if (e.key === " ") {
+    jump();
+  }
+});
+
+document.addEventListener('touchstart', () => {
+  if (gameOver) {
+    location.reload();
+  } else {
+    jump();
+  }
+});
+
 
 const loop = setInterval(() => {
   if (gameOver) return
@@ -39,7 +78,7 @@ const loop = setInterval(() => {
     contador.innerText = pontuacao
     barrilJaContado = true
 
-    if (pontuacao >= 15
+    if (pontuacao >= 20
     ) {
       clearInterval(loop)
       document.querySelector('.final').style.display = 'flex'
@@ -82,45 +121,3 @@ iniciarJogo()
 function iniciarJogo() {
   console.log("Jogo Iniciado")
 }
-  
-//movimento com TOUCH
-let pulando = false
-
-function pular() {
-if (pulando) return 
-  pulando = true
-  personagem.classList.add('pulo')
-  setTimeout(() => {
-    personagem.classList.remove('pulo')
-    pulando = false
-  }, 600)
-}
-document.addEventListener("touchstart", pular)
-
-document.addEventListener('touchstart', (e) => {
-  if (gameOver) {
-    location.reload()
-  } else if (e.key === " ") {
-    jump()
-  }
-})
-
-const falaNpc = document.getElementById('fala-npc')
-const botaoPular = document.getElementById('botao-pular')
-const textoFala = document.getElementById('texto-fala')
-
-// Exibir fala ao carregar
-window.addEventListener('load', () => {
-  falaNpc.style.display = 'flex'
-  // bloquear ações até o jogador fechar a fala
-  document.removeEventListener("touchstart", pular)
-  document.removeEventListener("keydown", jump)
-})
-
-// Ao clicar em "Pular fala"
-botaoPular.addEventListener('click', () => {
-  falaNpc.style.display = 'none'
-  // reativar controles
-  document.addEventListener("touchstart", pular)
-  document.addEventListener("keydown", jump)
-})

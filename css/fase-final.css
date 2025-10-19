@@ -251,11 +251,11 @@ margin: 0; padding: 0; box-sizing: border-box;
 
 #botaoContinuar {
   position: absolute;          
-  bottom: 43vh; 
+  bottom: 40vh; 
   right: 23vw;  
   background-color: #fcecc0;
   color: #3a230e; 
-  font-family: komika;
+  font-family: komika, sans-serif;
   font-size: 1.4vw;      
   font-weight: bold;
   padding: 0.8em 1.5em;
@@ -268,23 +268,9 @@ margin: 0; padding: 0; box-sizing: border-box;
 
 @media (max-width: 480px) {
   #botaoContinuar {
-
-      position: absolute;          
-  bottom: 54vh; 
-    right: 38vw;
-  background-color: #fcecc0;
-  color: #3a230e; 
-  font-family: komika;
-        font-size: 4vw;
-  font-weight: bold;
-  padding: 0.8em 1.5em;
-  border: 2px solid #8b5e3c; 
-  border-radius: 2em; 
-  box-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.3); 
-  z-index: 9999;
-  cursor: pointer;
-    
-  
+    bottom: 20vh; 
+    right: 34vw;
+    font-size: 4vw;
   }
 }
 
@@ -342,4 +328,35 @@ margin: 0; padding: 0; box-sizing: border-box;
     90vw 10vh white,
     100vw 65vh #ffeb3b;
 
+}
+
+#tutorial {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #3a230e;
+  font-family: komika, sans-serif;
+  font-size: 1.2vw;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em 2em;
+  border-radius: 1.5em;
+  border: 3px solid #8b5e3c;
+  box-shadow: 0.3em 0.3em 0.8em rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  animation: aparecer 1.2s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@media (max-width: 480px) {
+  #tutorial {
+    font-size: 4vw;
+    width: 85%;
+  }
 }

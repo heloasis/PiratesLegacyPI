@@ -58,6 +58,8 @@ body {
 
 .botao:hover {
   transform: translateX(-50%) scale(1.05);
+  text-decoration: none;
+  color: #3a230e;
 }
 
 

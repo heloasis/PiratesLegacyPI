@@ -330,3 +330,32 @@ margin: 0; padding: 0; box-sizing: border-box;
     100vw 65vh #ffeb3b;
 
 }
+
+#botaoPular {
+  position: absolute;          
+  top: 10vh; 
+  right: 5vw;  
+  background-color: #fcecc0;
+  color: #3a230e; 
+  font-family: komika;
+  font-size: 1vw;      
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border: 2px solid #8b5e3c; 
+  border-radius: 2em; 
+  box-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.3); 
+  z-index: 9999;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  #botaoPular {
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+    right: auto;
+    font-size: 3.5vw;
+    padding: 0.6em 1.2em;
+  }
+}
