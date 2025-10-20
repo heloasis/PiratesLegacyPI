@@ -16,10 +16,9 @@ let pulando = false;
 const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
 if (isMobile) {
-  tutorial.innerHTML = `👉 Toque e segure na tela para andar`;
+  tutorial.innerHTML = `👉 Toque para pular os obstáculos!`;
 } else {
-  tutorial.innerHTML = `➡️ Pressione ESPAÇO para pular os obstáculos! <br>`;
-}
+  tutorial.innerHTML = `➡️ Pressione ESPAÇO para pular os obstáculos! <br>`;}
 
 const jump = () => {
   if (gameOver || pulando) return;

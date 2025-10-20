@@ -2,7 +2,16 @@
     font-family: komika;
     src: url(../fontes/komika_axis/KOMIKAX_.ttf);
 }
-
+html, body {
+  height: 100%;
+    background: #173083;
+  color: #3a230e;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  color-scheme: light;
+  forced-color-adjust: none;
+}
 
 body{
   margin: 0; 
